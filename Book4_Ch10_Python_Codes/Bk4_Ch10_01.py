@@ -168,17 +168,17 @@ plot_four_figs(X,v1,1)
 
 v2 = V[:, 1].reshape((-1, 1))
 
-plot_four_figs(X,v2)
+plot_four_figs(X,v2,2)
 
 #%% Third basis vector
 
 v3 = V[:, 2].reshape((-1, 1))
 
-plot_four_figs(X,v3)
+plot_four_figs(X,v3,3)
 
 #%% Fourth basis vector
 
 v4 = V[:, 3].reshape((-1, 1))
 
-plot_four_figs(X,v4)
+plot_four_figs(X,v4,4)
 
