@@ -1,9 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 21 08:36:10 2022
 
-@author: james
-"""
+###############
+# Authored by Weisheng Jiang
+# Book 4  |  From Basic Arithmetic to Machine Learning
+# Published and copyrighted by Tsinghua University Press
+# Beijing, China, 2022
+###############
+
 
 # Bk4_Ch22_01_A
 
