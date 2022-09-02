@@ -9,19 +9,11 @@
 # Bk4_Ch2_07.py
 
 import numpy as np
-a = np.array([-2, 1, 1])
-b = np.array([1, -2, -1])
-# a = [-2, 1, 1]
-# b = [1, -2, -1]
+a = np.array([[2,3],
+              [3,4]])
 
+b = np.array([[3,4],
+              [5,6]])
 
-# calculate element-wise product of row vectors
-a_times_b = np.multiply(a, b)
-a_times_b_2 = a*b
-
-a_col = np.array([[-2], [1], [1]])
-b_col = np.array([[1], [-2], [-1]])
-
-# calculate element-wise product of column vectors
-a_times_b_col = np.multiply(a_col,b_col)
-a_times_b_col_2 = a_col*b_col
+a_@_b = np.dot(a,b)
+# a@b

@@ -6,17 +6,21 @@
 # Beijing, China, 2022
 ###############
 
-# Bk4_Ch2_04.py
+# Bk4_Ch1_04.py
 
 import numpy as np
 
-a, b = np.array([[4], [3]]), np.array([[5], [-2]])
+# define two column vectors
+a = np.array([[-2], [5]])
+b = np.array([[5], [-1]])
 
-# calculate cosine theta
-cos_theta = (a.T @ b) / (np.linalg.norm(a,2) * np.linalg.norm(b,2))
+# calculate vector addition
+a_plus_b = a + b
+a_plus_b_2 = np.add(a,b)
 
-# calculate theta in radian
-cos_radian = np.arccos(cos_theta)
+# calculate vector subtraction
+a_minus_b = a - b
+a_minus_b_2 = np.subtract(a,b)
 
-# convert radian to degree
-cos_degree = cos_radian * ((180)/np.pi)
+b_minus_a = b - a
+b_minus_a_2 = np.subtract(b,a)

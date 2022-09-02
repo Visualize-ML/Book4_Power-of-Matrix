@@ -9,11 +9,11 @@
 # Bk4_Ch2_02.py
 
 import numpy as np
-a = np.array([[2,3],
-              [3,4]])
 
-b = np.array([[3,4],
-              [5,6]])
+# define two column vectors
+a = np.array([[4], [3]])
+b = np.array([[-3], [4]])
 
-a_@_b = np.dot(a,b)
-# a@b
+# calculate L2 norm
+a_L2_norm = np.linalg.norm(a)
+b_L2_norm = np.linalg.norm(b)

@@ -9,12 +9,22 @@
 # Bk4_Ch2_01.py
 
 import numpy as np
+import matplotlib.pyplot as plt
 
-a = np.array([[4, 3]])
-b = np.array([[5, -2]])
+def draw_vector(vector,RBG): 
+    array = np.array([[0, 0, vector[0], vector[1]]])
+    X, Y, U, V = zip(*array)
+    plt.quiver(X, Y, U, V,angles='xy', scale_units='xy',scale=1,color = RBG)
 
-a_dot_b = np.inner(a, b)
+fig, ax = plt.subplots()
 
-a_2 = np.array([[4], [3]])
-b_2 = np.array([[5], [-2]])
-a_dot_b_2 = a_2.T@b_2
+draw_vector([4,3],np.array([0,112,192])/255)
+draw_vector([-3,4],np.array([255,0,0])/255)
+
+plt.ylabel('$x_2$')
+plt.xlabel('$x_1$')
+plt.axis('scaled')
+ax.set_xlim([-5, 5])
+ax.set_ylim([-5, 5])
+ax.grid(linestyle='--', linewidth=0.25, color=[0.5,0.5,0.5])
+plt.show()

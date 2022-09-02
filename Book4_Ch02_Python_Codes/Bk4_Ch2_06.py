@@ -9,16 +9,12 @@
 # Bk4_Ch2_06.py
 
 import numpy as np
-a = np.array([-2, 1, 1])
-b = np.array([1, -2, -1])
-# a = [-2, 1, 1]
-# b = [1, -2, -1]
 
-# calculate cross product of row vectors
-a_cross_b = np.cross(a, b)
+a = np.array([[4, 3]])
+b = np.array([[5, -2]])
 
-a_col = np.array([[-2], [1], [1]])
-b_col = np.array([[1], [-2], [-1]])
+a_dot_b = np.inner(a, b)
 
-# calculate cross product of column vectors
-a_cross_b_col = np.cross(a_col,b_col,axis=0)
+a_2 = np.array([[4], [3]])
+b_2 = np.array([[5], [-2]])
+a_dot_b_2 = a_2.T@b_2

@@ -8,33 +8,12 @@
 
 # Bk4_Ch2_08.py
 
-import matplotlib.pyplot as plt 
 import numpy as np
-import seaborn as sns
+a = np.array([[1,2],
+              [3,4]])
 
-def plot_heatmap(x,title):
+b = np.array([[3,4],
+              [5,6]])
 
-    fig, ax = plt.subplots()
-    ax = sns.heatmap(x,
-                     cmap='RdYlBu_r',
-                     cbar_kws={"orientation": "horizontal"}, vmin=-1, vmax=1)
-    ax.set_aspect("equal")
-    plt.title(title)
-
-a = np.array([[0.5],[-0.7],[1],[0.25],[-0.6],[-1]])
-b = np.array([[-0.8],[0.5],[-0.6],[0.9]])
-
-a_outer_b = np.outer(a, b)
-a_outer_a = np.outer(a, a)
-b_outer_b = np.outer(b, b)
-
-# Visualizations
-plot_heatmap(a,'a')
-
-plot_heatmap(b,'b')
-
-plot_heatmap(a_outer_b,'a outer b')
-
-plot_heatmap(a_outer_a,'a outer a')
-
-plot_heatmap(b_outer_b,'b outer b')
+a_dot_b = np.vdot(a,b)
+# [1,2,3,4]*[3,4,5,6].T
