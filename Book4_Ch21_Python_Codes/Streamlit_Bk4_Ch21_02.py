@@ -60,7 +60,7 @@ D,V = np.linalg.eig(A)
 D = np.diag(D)
 
 st.latex(r'''A = \begin{bmatrix}%s & %s\\%s & %s\end{bmatrix}''' %(a, b, b, c))
-
+st.latex(r'''A = V \Lambda V^{T}''')
 st.latex(bmatrix(A) + '=' + 
          bmatrix(np.around(V, decimals=3)) + '@' + 
          bmatrix(np.around(D, decimals=3)) + '@' + 

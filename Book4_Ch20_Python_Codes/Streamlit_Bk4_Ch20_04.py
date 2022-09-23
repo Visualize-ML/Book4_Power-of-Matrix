@@ -91,7 +91,7 @@ st.latex(r'''\Sigma = \begin{bmatrix}%s & %s\\%s & %s\end{bmatrix}'''
            rho_12*sigma_1*sigma_2, 
            rho_12*sigma_1*sigma_2, 
            sigma_2**2))
-
+st.latex(r'''\Sigma = V \Lambda V^{T}''')
 st.latex(bmatrix(Sigma) + '=' + 
          bmatrix(np.around(V, decimals=3)) + '@' + 
          bmatrix(np.around(D, decimals=3)) + '@' + 
