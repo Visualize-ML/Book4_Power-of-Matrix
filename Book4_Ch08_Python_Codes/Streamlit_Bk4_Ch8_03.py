@@ -85,7 +85,7 @@ Y = np.array(yh)
 
 Txhyh = A@np.stack((X, Y))# #transform by T the horizontal lines
 
-st.latex(bmatrix(A))
+st.latex(r'A = ' + bmatrix(A))
 
 a1 = A[:,0].reshape((-1, 1))
 a2 = A[:,1].reshape((-1, 1))
@@ -100,6 +100,21 @@ st.latex(r'''
          'e_2 = ' + bmatrix(a2)
          )
 
+st.latex(r'\begin{vmatrix} A \end{vmatrix} = ' + str(np.linalg.det(A)))
+
+theta_array = np.linspace(0, 2*np.pi, 101)
+circle_x = np.cos(theta_array)
+circle_y = np.sin(theta_array)
+circle_array = np.stack((circle_x, circle_y))
+
+fig.add_trace(go.Scatter(x=circle_x, y=circle_y, 
+                         fill="toself", line_color='orange'), 1, 1)
+
+A_times_circle_array = A@circle_array
+
+fig.add_trace(go.Scatter(x=A_times_circle_array[0,:], 
+                         y=A_times_circle_array[1,:], 
+                         fill="toself", line_color='orange'), 1, 2)
 
 fig.add_trace(go.Scatter(x=Txvyv[0], y=Txvyv[1], 
                          mode="lines", line_width=lw,

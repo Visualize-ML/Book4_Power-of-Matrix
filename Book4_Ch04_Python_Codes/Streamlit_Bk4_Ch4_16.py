@@ -85,7 +85,7 @@ Y = np.array(yh)
 
 Txhyh = A@np.stack((X, Y))# #transform by T the horizontal lines
 
-st.latex(bmatrix(A))
+st.latex(r'A = ' + bmatrix(A))
 
 a1 = A[:,0].reshape((-1, 1))
 a2 = A[:,1].reshape((-1, 1))
@@ -100,6 +100,19 @@ st.latex(r'''
          'e_2 = ' + bmatrix(a2)
          )
 
+st.latex(r'\begin{vmatrix} A \end{vmatrix} = ' + str(np.linalg.det(A)))
+square_x = np.array([0, 1, 1, 0])
+square_y = np.array([0, 0, 1, 1])
+square_array = np.stack((square_x, square_y))
+
+fig.add_trace(go.Scatter(x=square_x, y=square_y, 
+                         fill="toself", line_color='orange'), 1, 1)
+
+A_times_square_array = A@square_array
+
+fig.add_trace(go.Scatter(x=A_times_square_array[0,:], 
+                         y=A_times_square_array[1,:], 
+                         fill="toself", line_color='orange'), 1, 2)
 
 fig.add_trace(go.Scatter(x=Txvyv[0], y=Txvyv[1], 
                          mode="lines", line_width=lw,
