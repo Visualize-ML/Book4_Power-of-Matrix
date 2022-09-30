@@ -39,7 +39,6 @@ def bmatrix(a):
     return '\n'.join(rv)
 
 
-# A copy from Seaborn
 iris = load_iris()
 X = iris.data
 y = iris.target

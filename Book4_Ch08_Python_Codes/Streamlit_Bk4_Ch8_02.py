@@ -53,19 +53,18 @@ for k in range(-m, m+1):
 with st.sidebar:
     
     st.latex(r'''
-             A = \begin{bmatrix}
-    a & b\\
-    c & d
+             R = \begin{bmatrix}
+    \cos(\theta) & -\sin(\theta)\\
+    \sin(\theta) & \cos(\theta)
     \end{bmatrix}''')
     
-    a = st.slider('a',-2.0, 2.0, step = 0.1, value = 1.0)
-    b = st.slider('b',-2.0, 2.0, step = 0.1, value = 0.0)  
-    c = st.slider('c',-2.0, 2.0, step = 0.1, value = 0.0)  
-    d = st.slider('c',-2.0, 2.0, step = 0.1, value = 1.0) 
+    theta = st.slider('Degree',-180, 180, step = 5, value = 0)
+    
+    theta = theta/180*np.pi
 
-theta = np.pi/6
-A = np.array([[a, b], 
-              [c, d]], dtype=float)
+
+R = np.array([[np.cos(theta), -np.sin(theta)], 
+              [np.sin(theta), np.cos(theta)]], dtype=float)
 
 #get only the coordinates from -3 to 3
 # X = np.array(xv[6:-6])
@@ -75,7 +74,7 @@ X = np.array(xv)
 Y = np.array(yv)
 
 # transform by T the vector of coordinates [x, y]^T where the vector runs over the columns of np.stack((X, Y))
-Txvyv = A@np.stack((X, Y)) #transform by T the vertical lines
+Txvyv = R@np.stack((X, Y)) #transform by T the vertical lines
 
 # X = np.array(xh[6:-6])
 # Y = np.array(yh[6:-6])
@@ -83,23 +82,24 @@ Txvyv = A@np.stack((X, Y)) #transform by T the vertical lines
 X = np.array(xh)
 Y = np.array(yh)
 
-Txhyh = A@np.stack((X, Y))# #transform by T the horizontal lines
+Txhyh = R@np.stack((X, Y))# #transform by T the horizontal lines
 
-st.latex(bmatrix(A))
+st.latex(r'R = ' + bmatrix(R))
 
-a1 = A[:,0].reshape((-1, 1))
-a2 = A[:,1].reshape((-1, 1))
+r1 = R[:,0].reshape((-1, 1))
+r2 = R[:,1].reshape((-1, 1))
 
 st.latex(r'''
-         a_1 = Ae_1 = ''' + bmatrix(A) + 
-         'e_1 = ' + bmatrix(a1)
+         r_1 = R e_1 = ''' + bmatrix(R) + 
+         'e_1 = ' + bmatrix(r1)
          )
 
 st.latex(r'''
-         a_2 = Ae_2 = ''' + bmatrix(A) + 
-         'e_2 = ' + bmatrix(a2)
+         r_2 = R e_2 = ''' + bmatrix(R) + 
+         'e_2 = ' + bmatrix(r2)
          )
 
+st.latex(r'\begin{vmatrix} R \end{vmatrix} = ' + str(np.linalg.det(R)))
 
 fig.add_trace(go.Scatter(x=Txvyv[0], y=Txvyv[1], 
                          mode="lines", line_width=lw,
@@ -108,6 +108,7 @@ fig.add_trace(go.Scatter(x=Txvyv[0], y=Txvyv[1],
 fig.add_trace(go.Scatter(x=Txhyh[0], y=Txhyh[1], 
                          mode="lines", line_width=lw,
                          line_color = 'blue'), 1, 2)
+
 fig.update_xaxes(range=[-4, 4])
 fig.update_yaxes(range=[-4, 4])
 fig.update_layout(width=800, height=500, showlegend=False, template="none",
