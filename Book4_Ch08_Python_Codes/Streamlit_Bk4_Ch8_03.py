@@ -61,7 +61,7 @@ with st.sidebar:
     a = st.slider('a',-2.0, 2.0, step = 0.1, value = 1.0)
     b = st.slider('b',-2.0, 2.0, step = 0.1, value = 0.0)  
     c = st.slider('c',-2.0, 2.0, step = 0.1, value = 0.0)  
-    d = st.slider('c',-2.0, 2.0, step = 0.1, value = 1.0) 
+    d = st.slider('d',-2.0, 2.0, step = 0.1, value = 1.0) 
 
 theta = np.pi/6
 A = np.array([[a, b], 

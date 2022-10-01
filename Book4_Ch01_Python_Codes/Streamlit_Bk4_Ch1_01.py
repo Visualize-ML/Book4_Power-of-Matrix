@@ -21,18 +21,24 @@ with st.sidebar:
     y_feature = st.radio('Vertical axis',
              features)    
 
-# Heatmap
+#%% original data
+
+with st.expander('Original data'):
+    st.write(df)
+    
+
+#%% Heatmap
 with st.expander('Heatmap'):
     fig_1 = px.imshow(df.iloc[:,0:4],
                       color_continuous_scale='RdYlBu_r')
     st.plotly_chart(fig_1)
     
-# 2D scatter plot
+#%% 2D scatter plot
 with st.expander('2D scatter plot'):
     fig_2 = px.scatter(df, x=x_feature, y=y_feature, color="species")
     st.plotly_chart(fig_2)
 
-# 3D scatter plot
+#%% 3D scatter plot
 with st.expander('3D scatter plot'):
     fig_3 = px.scatter_3d(df, 
                           x='sepal_length', 

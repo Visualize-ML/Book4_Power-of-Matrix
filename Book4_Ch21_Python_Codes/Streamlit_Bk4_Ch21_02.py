@@ -82,7 +82,9 @@ ff_x = f_x_fcn(xx1,xx2)
 fig_surface = go.Figure(go.Surface(
     x = x1_,
     y = x2_,
-    z = ff_x))
+    z = ff_x,
+    colorscale= 'RdYlBu_r'))
+
 fig_surface.update_layout(
     autosize=False,
     width=500,
@@ -95,7 +97,8 @@ fig_contour = go.Figure(
     go.Contour(
         z=ff_x,
         x=x1_,
-        y=x2_
+        y=x2_,
+        colorscale= 'RdYlBu_r'
     ))
 
 fig_contour.update_layout(

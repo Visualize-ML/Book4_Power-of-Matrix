@@ -67,6 +67,9 @@ st.latex(r'G = ' +
          bmatrix(np.round(D,2)) + '@' +
          bmatrix(np.round(V.T,2)))
 
+st.write('Mapped data:')
+st.latex('Z = XV')
+
 #%%
 
 Z = X@V
@@ -79,25 +82,32 @@ df['species'] = df['species'].map(mapping_rule)
 
 #%%
 features = df.columns.to_list()[:-1]
-with st.sidebar:
-    st.write('2D scatter plot')
-    x_feature = st.radio('Horizontal axis',
-             features)
-    y_feature = st.radio('Vertical axis',
-             features)    
 
-# Heatmap
+#%% Table of mapped data
+
+with st.expander('Mapped data'):
+    st.write(df)
+    
+#%% Heatmap
 with st.expander('Heatmap'):
     fig_1 = px.imshow(df.iloc[:,0:4],
                       color_continuous_scale='RdYlBu_r')
     st.plotly_chart(fig_1)
     
-# 2D scatter plot
+#%% 2D scatter plot
+
+with st.sidebar:
+    st.write('2D scatter plot')
+    x_feature = st.radio('Horizontal axis',
+             features)
+    y_feature = st.radio('Vertical axis',
+             features)  
+    
 with st.expander('2D scatter plot'):
     fig_2 = px.scatter(df, x=x_feature, y=y_feature, color="species")
     st.plotly_chart(fig_2)
 
-# 3D scatter plot
+#%% 3D scatter plot
 with st.expander('3D scatter plot'):
     fig_3 = px.scatter_3d(df, 
                           x='PC1', 
@@ -106,7 +116,7 @@ with st.expander('3D scatter plot'):
                   color='species')
     st.plotly_chart(fig_3)
 
-# Pairwise scatter plot
+#%% Pairwise scatter plot
 with st.expander('Pairwise scatter plot'):
     fig_4 = px.scatter_matrix(df, 
                             dimensions=["PC1", 

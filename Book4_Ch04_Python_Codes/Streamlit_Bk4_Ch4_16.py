@@ -116,11 +116,11 @@ fig.add_trace(go.Scatter(x=A_times_square_array[0,:],
 
 fig.add_trace(go.Scatter(x=Txvyv[0], y=Txvyv[1], 
                          mode="lines", line_width=lw,
-                         line_color = 'blue'), 1, 2)
+                         line_color = 'red'), 1, 2)
 
 fig.add_trace(go.Scatter(x=Txhyh[0], y=Txhyh[1], 
                          mode="lines", line_width=lw,
-                         line_color = 'red'), 1, 2)
+                         line_color = 'blue'), 1, 2)
 fig.update_xaxes(range=[-4, 4])
 fig.update_yaxes(range=[-4, 4])
 fig.update_layout(width=800, height=500, showlegend=False, template="none",

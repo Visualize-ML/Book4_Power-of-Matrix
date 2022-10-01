@@ -37,9 +37,8 @@ fig_1.update_layout(
     margin=dict(
         l=50,
         r=50,
-        b=100,
-        t=100,
-        pad = 4))
+        b=50,
+        t=50))
 
 fig_2 = go.Figure(
     go.Surface(

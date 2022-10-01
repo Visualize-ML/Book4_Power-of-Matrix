@@ -41,7 +41,7 @@ b = np.round(b,1)
 
 show_number = False
 with st.sidebar:
-    show_number = st.checkbox('Show values:')
+    show_number = st.checkbox('Display values')
 
 tensor_a_b = a@b.T
 

@@ -58,7 +58,7 @@ with st.sidebar:
     \sin(\theta) & \cos(\theta)
     \end{bmatrix}''')
     
-    theta = st.slider('Degree',-180, 180, step = 5, value = 0)
+    theta = st.slider('Theta degree: ',-180, 180, step = 5, value = 0)
     
     theta = theta/180*np.pi
 

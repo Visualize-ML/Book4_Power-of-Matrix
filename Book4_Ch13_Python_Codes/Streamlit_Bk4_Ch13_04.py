@@ -64,7 +64,7 @@ df = pd.DataFrame(X, columns=['z1','z2', 'color'])
 
 #%% Scatter
 
-st.latex(bmatrix(A))
+st.latex('A = ' + bmatrix(A))
 
 fig = px.scatter(df, 
                  x="z1", 

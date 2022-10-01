@@ -102,7 +102,8 @@ st.latex(bmatrix(Sigma) + '=' +
 fig_surface = go.Figure(go.Surface(
     x = x1,
     y = x2,
-    z = PDF_zz))
+    z = PDF_zz,
+    colorscale= 'RdYlBu_r'))
 fig_surface.update_layout(
     autosize=False,
     width=500,
@@ -115,7 +116,8 @@ fig_contour = go.Figure(
     go.Contour(
         z=PDF_zz,
         x=x1,
-        y=x2
+        y=x2,
+        colorscale= 'RdYlBu_r'
     ))
 
 fig_contour.update_layout(
