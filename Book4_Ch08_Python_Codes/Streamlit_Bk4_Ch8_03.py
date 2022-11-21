@@ -46,8 +46,9 @@ yh=[]
 for k in range(-m, m+1):
     xh.extend([-m, m, np.nan])
     yh.extend([k, k, np.nan])
-    fig.add_trace(go.Scatter(x=xh, y=yh, mode="lines", line_width=lw,
-                             line_color = 'blue'), 1, 1)
+    
+fig.add_trace(go.Scatter(x=xh, y=yh, mode="lines", line_width=lw,
+                         line_color = 'blue'), 1, 1)
 
 
 with st.sidebar:
