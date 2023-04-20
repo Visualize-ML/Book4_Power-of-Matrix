@@ -1,5 +1,5 @@
 《数学要素》粉丝五折入口：
-https://u.jd.com/Q81lgSt
+https://zhuanlan.zhihu.com/p/620243026
 
 看个人情况，开源资源，永久有效哈。
 
