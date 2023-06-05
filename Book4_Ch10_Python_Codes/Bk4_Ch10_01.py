@@ -67,7 +67,7 @@ def heatmap(Matrices,Titles,Ranges,Equal_tags):
     plt.axis('off')
     
     plt.sca(axs[2])
-    ax = sns.heatmap(V,cmap='RdYlBu_r',
+    ax = sns.heatmap(M2,cmap='RdYlBu_r',
                      vmin = Ranges[1][0], 
                      vmax = Ranges[1][1],
                      cbar=False,
@@ -82,7 +82,7 @@ def heatmap(Matrices,Titles,Ranges,Equal_tags):
     plt.axis('off')
     
     plt.sca(axs[4])
-    ax = sns.heatmap(V.T,cmap='RdYlBu_r',
+    ax = sns.heatmap(M3,cmap='RdYlBu_r',
                      vmin = Ranges[2][0], 
                      vmax = Ranges[2][1],
                      cbar=False,
