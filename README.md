@@ -1,3 +1,6 @@
+《统计至简》五折入口：
+https://zhuanlan.zhihu.com/p/634253719
+<br>
 《数学要素》五折入口：
 https://zhuanlan.zhihu.com/p/620243026
 <br>
