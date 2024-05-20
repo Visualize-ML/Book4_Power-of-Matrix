@@ -27,10 +27,6 @@ def main():
                 continue 
             if not fitem.startswith("Book"):
                 continue
-            
-            fname = fname.replace("Book4_", "")
-            fname = fname.split("__")[0]
-            fname = fname.replace("_", " ")
  
             pdfs.append(fitem)
              
@@ -45,7 +41,7 @@ def main():
         fname, fext = os.path.splitext(fitem) 
 
         fname = fname.replace("Book4_", "")
-        fname = fname.split("__")[0]
+        fname = fname.rsplit("__", 2)[0]
         fname = fname.replace("_", " ")
         
         pdfrd = PdfReader(os.path.join(pwd, fitem), 'rb')
