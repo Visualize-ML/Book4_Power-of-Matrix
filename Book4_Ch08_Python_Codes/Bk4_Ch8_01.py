@@ -71,3 +71,5 @@ ax.spines['bottom'].set_visible(False)
 ax.spines['left'].set_visible(False)
 plt.xlabel('$x_1$')
 plt.ylabel('$x_2$')
+
+plt.show()
