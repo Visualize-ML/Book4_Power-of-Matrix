@@ -43,7 +43,7 @@ for j, theat_i in enumerate(theta_array):
                   [5*np.sin(theat_i)]])
 
     plt.plot(x[0],x[1], 
-             marker = 'x',color = colors_j,
+             marker = 'x',color = colors[j,:],
              markersize = 15)
     # plot the initial point
     
@@ -68,3 +68,4 @@ ax.spines['bottom'].set_visible(False)
 ax.spines['left'].set_visible(False)
 ax.axvline(x=0,color = 'k')
 ax.axhline(y=0,color = 'k')
+plt.show()
