@@ -27,6 +27,8 @@ def plot_shape(X,copy = False):
              markeredgecolor = edge_color*0.5,
              linestyle = 'None') 
 
+    
+
 X = np.array([[1,1],
               [0,-1],
               [-1,-1],
@@ -35,12 +37,11 @@ X = np.array([[1,1],
 # visualizations
 
 thetas = np.linspace(30, 330, num=11)
+fig, ax = plt.subplots()
 
-for theta in thetas:
+for theta in thetas:  
     
-    fig, ax = plt.subplots()
-    
-    theta = theta/180*np.pi;
+    theta = theta/180*np.pi
     # rotation
     R = np.array([[np.cos(theta),  np.sin(theta)],
                   [-np.sin(theta), np.cos(theta)]])
@@ -66,3 +67,5 @@ for theta in thetas:
     ax.spines['left'].set_visible(False)
     plt.xlabel('$x_1$')
     plt.ylabel('$x_2$')
+
+plt.show()
