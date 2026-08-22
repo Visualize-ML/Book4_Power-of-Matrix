@@ -63,7 +63,7 @@ trace2 = go.Contour(
     colorscale='RdYlBu_r')  # 使用红黄蓝色带
 
 data = [trace1, trace2]  # 将梯度向量图和等高线图组合
-fig = go.FigureWidget(data)  # 创建图形对象
+fig = go.Figure(data)  # 创建图形对象
 fig.update_layout(
     autosize=False,  # 禁用自动调整尺寸
     width=800,  # 设置图表宽度为 800 像素
@@ -77,7 +77,7 @@ st.plotly_chart(fig)  # 在 Streamlit 页面中显示组合图形
 
 # 绘制流线图和等高线图
 data2 = [trace3, trace2]  # 将流线图和等高线图组合
-fig2 = go.FigureWidget(data2)  # 创建图形对象
+fig2 = go.Figure(data2)  # 创建图形对象
 fig2.update_layout(
     autosize=False,  # 禁用自动调整尺寸
     width=800,  # 设置图表宽度为 800 像素

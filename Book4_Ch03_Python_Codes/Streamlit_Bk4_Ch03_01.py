@@ -20,8 +20,9 @@ xx1, xx2 = np.meshgrid(x1, x2)  # 使用meshgrid生成二维网格数据
 with st.sidebar:  # 在侧边栏中设置参数
     st.write('Note: Lp norm, p >= 1')  # 显示提示信息：Lp范数，p >= 1
     p = st.slider('p',  # 创建滑块选择p值
-                  min_value=-20.0,  # p值的最小值为-20.0
+                  min_value=1.0,  # Lp范数要求p >= 1，避免p=0或p<0时计算无意义/零除
                   max_value=20.0,  # p值的最大值为20.0
+                  value=2.0,  # 默认值为2.0（欧几里得范数）
                   step=0.2)  # p值的步长为0.2
 
 ## 计算Lp范数的二维数据

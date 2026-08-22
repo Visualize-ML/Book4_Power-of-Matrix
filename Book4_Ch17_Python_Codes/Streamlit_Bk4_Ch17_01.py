@@ -69,7 +69,7 @@ trace2 = go.Contour(  # 创建等高线图
 
 # 将梯度场和等高线图合并为一个图形
 data = [trace1, trace2]  # 合并两个图层数据
-fig = go.FigureWidget(data)  # 创建图形对象
+fig = go.Figure(data)  # 创建图形对象
 fig.update_layout(
     autosize=False,  # 禁用自动调整大小
     width=800,  # 设置图表宽度为 800 像素

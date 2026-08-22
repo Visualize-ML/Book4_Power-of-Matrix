@@ -49,7 +49,7 @@ yh = []  # 存储水平线的y坐标
 for k in range(-m, m + 1):  # 遍历网格范围
     xh.extend([-m, m, np.nan])  # 每条水平线的起始和结束x坐标
     yh.extend([k, k, np.nan])  # 每条水平线的起始和结束y坐标
-    fig.add_trace(go.Scatter(x=xh, y=yh, mode="lines", line_width=lw, line_color='blue'), 1, 1)  # 添加水平线到第一个子图
+fig.add_trace(go.Scatter(x=xh, y=yh, mode="lines", line_width=lw, line_color='blue'), 1, 1)  # 添加水平线到第一个子图（在循环外一次性添加，避免重复叠加41条轨迹）
 
 ## 创建交互式侧边栏
 with st.sidebar:  # 定义侧边栏
@@ -61,7 +61,7 @@ with st.sidebar:  # 定义侧边栏
     a = st.slider('a', -2.0, 2.0, step=0.1, value=1.0)  # 创建滑块选择矩阵A的元素a
     b = st.slider('b', -2.0, 2.0, step=0.1, value=0.0)  # 创建滑块选择矩阵A的元素b
     c = st.slider('c', -2.0, 2.0, step=0.1, value=0.0)  # 创建滑块选择矩阵A的元素c
-    d = st.slider('c', -2.0, 2.0, step=0.1, value=1.0)  # 创建滑块选择矩阵A的元素d
+    d = st.slider('d', -2.0, 2.0, step=0.1, value=1.0)  # 创建滑块选择矩阵A的元素d
 
 ## 定义矩阵变换
 theta = np.pi / 6  # 定义角度theta
