@@ -135,12 +135,12 @@ fig.add_trace(go.Scatter(x=A_times_circle_array[0, :],
 # 将变换后的垂直线添加到第二个子图
 fig.add_trace(go.Scatter(x=Txvyv[0], y=Txvyv[1],
                          mode="lines", line_width=lw,
-                         line_color='blue'), 1, 2)
+                         line_color='red'), 1, 2)
 
 # 将变换后的水平线添加到第二个子图
 fig.add_trace(go.Scatter(x=Txhyh[0], y=Txhyh[1],
                          mode="lines", line_width=lw,
-                         line_color='red'), 1, 2)
+                         line_color='blue'), 1, 2)
 
 # 设置x轴和y轴的范围
 fig.update_xaxes(range=[-4, 4])

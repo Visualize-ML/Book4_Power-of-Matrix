@@ -35,7 +35,7 @@ def fcn_mahal(xx, yy, mu, Sigma, standardized=False):
     else:  # 否则直接计算Sigma的逆矩阵
         Sigma_inv = np.linalg.inv(Sigma)
     xy_ = np.stack((xx.flatten(), yy.flatten())).T  # 将输入数组展平并堆叠
-    zz = np.diag(np.sqrt(np.dot(np.dot((xy_ - mu), Sigma_inv), (xy_ - mu).T)))  # 计算Mahalanobis距离
+    zz = np.sqrt(np.sum(((xy_ - mu) @ Sigma_inv) * (xy_ - mu), axis=1))  # 计算Mahalanobis距离（向量化，避免生成N×N中间矩阵导致内存暴涨）
     zz = np.reshape(zz, xx.shape)  # 重塑计算结果为网格形状
     return zz  # 返回计算结果
 
